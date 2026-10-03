@@ -1,22 +1,10 @@
-from pathlib import Path
 
-readme = """# Laboratorio L2 — SOLID
-## Taller integrador: el backend de Banco Andino
+## Taller 
 
 **Asignatura:** Ingeniería de Software II  
 **Universidad Nacional de Colombia — Sede Bogotá**  
 **Año:** 2026  
 **Lenguaje:** Java
-
----
-
-# Bloque 0 — Arranque
-
-## 0.1 Preparación del proyecto
-
-## 0.2 Salida original
-
-## 0.3 Comprensión del flujo
 
 ---
 
@@ -26,11 +14,12 @@ readme = """# Laboratorio L2 — SOLID
 
 | Clase / método | Letra | Evidencia en el código | Consecuencia para el banco o cliente |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| CDT - RETIRAR| L | El código hereda un método que lanza una excepción | Si se mezclan cuentas para retirar dinero y aparece un CDT, el sistema explota.
+|Transaction Service - TRANSFERIR | O | Se encuentra el uso de un SWITCH para identificar a donde va el dinero | Si la empresa quiere adicionar tipos de transferencia, se tiene que tocar directamente la clase para ello. 
+|Transaction Service - TRANSFERIR | CLASE PER SE | Se hace llamado estricto a repositorio oracle y sms Gateway | Solo se pueden usar estos proveedores por el momento, pero en caso de que se desee cambiar, el cambio en código seria mucho mas significativo que de lo necesario.  
+|Transaction Service - TRANSFERIR | S | Se tienen demasiadas responsabilidades por las cuales se podrían realizar cambios | Si el ticket que lanza la transferencia cambia de formato, se tiene que cambiar una clase super importante. 
+| Cobro Cuota Manejo - CobrarMensual | L | Se tiene como argumento la clase CUENTA | En el código actual, la clase CUENTA tiene hijos que no permiten el retiro de dinero. 
+| ProductoBancario | I | se delegan muchas tareas a esta interfaz que no son usadas por aquellas clases que la implementan | Un futuro cambio en las funcionalidades de esta interfaz haría que tengamos que cambiar todas las clases que la implementen también. 
 
 ## 1.2 Experimentos
 
