@@ -31,11 +31,11 @@
 
 | Métrica | Antes |
 |---|---|
-| Líneas del método `transferir` | |
-| Número de razones distintas por las que `TransaccionService` podría cambiar | |
-| Clases concretas que `TransaccionService` crea con `new` | |
-| Métodos vacíos o que lanzan excepción por "no aplica" | |
-| ¿Se puede probar `transferir` sin Oracle ni SMS? | |
+| Líneas del método `transferir` | 37 |
+| Número de razones distintas por las que `TransaccionService` podría cambiar | 3 |
+| Clases concretas que `TransaccionService` crea con `new` | 2 |
+| Métodos vacíos o que lanzan excepción por "no aplica" | 4 |
+| ¿Se puede probar `transferir` sin Oracle ni SMS? | No |
 
 ## 1.4 Diagrama de clases del código original
 
