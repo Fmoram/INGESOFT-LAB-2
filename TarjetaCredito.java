@@ -1,4 +1,4 @@
-public class TarjetaCredito implements ProductoBancario {
+public class TarjetaCredito implements ProductoBancario, Retirar {
     private double deuda;
     private final double cupo;
 
