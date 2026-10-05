@@ -6,8 +6,6 @@ public class TarjetaCredito implements ProductoBancario, Retirar {
         this.cupo = cupo;
     }
 
-    public void depositar(double monto) { } // no aplica
-
     public void retirar(double monto) { // avance en efectivo
         if (deuda + monto > cupo) throw new IllegalStateException("Cupo insuficiente");
         deuda += monto;
