@@ -9,7 +9,7 @@ public class TransaccionService {
         if (monto <= 0) throw new IllegalArgumentException("Monto inválido");
         if (monto > 5_000_000) throw new IllegalArgumentException("Supera el tope diario");
 
-        // 2. Cálculo de la comisión
+        // 2. Cálculo de la comisión principio SOLID O
         COMISION com;
         switch (tipo) {
             case "MISMO_BANCO" -> com = new MISMO_BANCO();
