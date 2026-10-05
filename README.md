@@ -37,8 +37,13 @@
 | Métodos vacíos o que lanzan excepción por "no aplica" | 4 |
 | ¿Se puede probar `transferir` sin Oracle ni SMS? | No |
 
-## 1.4 Diagrama de clases del código original
+## SALIDA ORIGINAL DEL CODIGO 
 
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/5d6bc569f4ce2b769689452c7d0d13ad5444be64/1.png)
+https://github.com/Fmoram/INGESOFT-LAB-2/blob/5d6bc569f4ce2b769689452c7d0d13ad5444be64/1.png\
+
+## PRUEBA CDT
+![image alt]()
 ---
 
 # Bloque 2 — Refactorización
