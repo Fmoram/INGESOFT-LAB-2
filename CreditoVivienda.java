@@ -5,10 +5,6 @@ public class CreditoVivienda implements ProductoBancario {
         this.saldoPendiente = valorPrestamo;
     }
 
-    public void depositar(double monto) { } // no aplica
-
-    public void retirar(double monto) { } // no aplica
-
     public double calcularIntereses() {
         return saldoPendiente * 0.011;
     }
@@ -21,3 +17,4 @@ public class CreditoVivienda implements ProductoBancario {
         return "Crédito vivienda - pendiente: $" + saldoPendiente;
     }
 }
+
