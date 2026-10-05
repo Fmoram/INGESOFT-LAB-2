@@ -1,15 +1,21 @@
 import java.time.LocalDateTime;
 
 public class TransaccionService {
-    private final OracleRepositorio repositorio = new OracleRepositorio();
-    private final SmsGateway sms = new SmsGateway();
+
+    private final REPOSITORIO repo;
+    private final NOTIFICATION noti;
+
+    public TransaccionService(REPOSITORIO repo, NOTIFICATION noti){
+        this.repo = repo;
+        this.noti = noti;
+    }
 
     public void transferir(Cuenta origen, Cuenta destino, double monto, String tipo) {
         // 1. Validación
         if (monto <= 0) throw new IllegalArgumentException("Monto inválido");
         if (monto > 5_000_000) throw new IllegalArgumentException("Supera el tope diario");
 
-        // 2. Cálculo de la comisión principio SOLID O
+        // 2. Cálculo de la comisión
         COMISION com;
         switch (tipo) {
             case "MISMO_BANCO" -> com = new MISMO_BANCO();
@@ -24,14 +30,14 @@ public class TransaccionService {
         destino.depositar(monto);
 
         // 4. Persistencia
-        repositorio.guardarTransaccion(origen.getNumero(), destino.getNumero(), monto, comision);
+        repo.guardarTransaccion(origen.getNumero(), destino.getNumero(), monto, comision);
 
         // 5. Comprobante
         COMPROBANTE comprobante = new COMPROBANTE();
         comprobante.comprobante(origen, destino, monto, tipo, comision);
 
         // 6. Notificación
-        sms.enviar(origen.getTitular(), "Transferiste $" + monto + " a la cuenta " +
+        noti.enviar(origen.getTitular(), "Transferiste $" + monto + " a la cuenta " +
             destino.getNumero());
 
         // 7. Auditoría
