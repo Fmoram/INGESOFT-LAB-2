@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Cuenta ana = new CuentaAhorros("001-1", "Ana", 2_000_000);
         Cuenta luis = new CuentaAhorros("001-2", "Luis", 500_000);
-        Cuenta cdtAna = new CDT("CDT-9", "Ana", 10_000_000, LocalDate.now().plusMonths(6));
+        CDT cdtAna = new CDT("CDT-9", "Ana", 10_000_000, LocalDate.now().plusMonths(6));
 
         TransaccionService servicio = new TransaccionService();
         servicio.transferir(ana, luis, 150_000, "OTRO_BANCO");
