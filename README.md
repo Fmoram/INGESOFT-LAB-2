@@ -39,11 +39,13 @@
 
 ## SALIDA ORIGINAL DEL CODIGO 
 
-![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/5d6bc569f4ce2b769689452c7d0d13ad5444be64/1.png)
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/22842f4a3bb4e1ce66b2449dc53c0cc9164283ae/inicio%20.png
+)
 https://github.com/Fmoram/INGESOFT-LAB-2/blob/5d6bc569f4ce2b769689452c7d0d13ad5444be64/1.png\
 
 ## PRUEBA CDT
-![image alt]()
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/22842f4a3bb4e1ce66b2449dc53c0cc9164283ae/prueba%20CDT%20.png
+)
 ---
 
 # Bloque 2 — Refactorización
@@ -52,79 +54,59 @@ https://github.com/Fmoram/INGESOFT-LAB-2/blob/5d6bc569f4ce2b769689452c7d0d13ad54
 
 ### Cambios realizados
 
+Se delegaron las responsabilidades de la clase transaccion a otras clases con el fin de evitar cambios directos
 ### Pregunta de control
+La clase como tal solo tiene 1 responsabilidad, las demas son de otras clases
 
-### Commit
-
-`control-S`
-
----
 
 ## Punto de control O
 
 ### Cambios realizados
-
+el switch se mantiene al ser la única forma de diferenciar tipos de envió, pero las asignaciones a comisiones se hacen por medio de clases exteras. 
 ### Pregunta de control
+solo se modificaria el switch en terminos de creación de la variable, pero la nueva instancia e crea en una clase aparte. 
 
-### Commit
-
-`control-O`
-
----
 
 ## Punto de control L
 
 ### Cambios realizados
-
+CDT DEJA DE SER UNA CUENTA
 ### Pregunta de control
+Ahora los problemas respecto a cdt pasan en compilación y no en ejecución, pues se diferencia una cuenta corriente de un CDT. El problema no se resuelve con try y catch porque CDT seguía siendo cuenta, y al tratarla como tal el programa se Moria.  
 
-### Commit
 
-`control-L`
 
----
 
 ## Punto de control I
 
 ### Cambios realizados
-
+Se separaron responsabilidades de la interfaz en otras interfaces. 
 ### Pregunta de control
+Si se pudo lograr el generador de extractos para todas las clases que lo implementan, solo se necesitó 3 interfaces, y por clase se acoplaban las necesarias. 
 
-### Commit
-
-`control-I`
-
----
 
 ## Punto de control D
 
 ### Cambios realizados
-
+Ahora los repositorios  servicios de mensajería implementan si o si una interfaz, lo que nos permite abstraerlas y usar mas de un servicio en caso de ser necesario, pues el que escoge es el usuario. Si, y es posible la prueba.
 ### Pregunta de control
 
-### Commit
 
-`control-D`
-
----
 
 # Bloque 3 — Pruebas unitarias
 
 ## Prueba 1
-
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/22842f4a3bb4e1ce66b2449dc53c0cc9164283ae/1.png)
 ## Prueba 2
-
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/22842f4a3bb4e1ce66b2449dc53c0cc9164283ae/2.png)
 ## Prueba 3
-
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/22842f4a3bb4e1ce66b2449dc53c0cc9164283ae/3.png)
 ## Prueba 4
-
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/22842f4a3bb4e1ce66b2449dc53c0cc9164283ae/4.png)
 ## Prueba 5
-
+![image alt](https://github.com/Fmoram/INGESOFT-LAB-2/blob/22842f4a3bb4e1ce66b2449dc53c0cc9164283ae/5.png)
 ## Pregunta de control
-
-### Commit
-
-`bloque-3-pruebas`
+las pruebas tardaron entre 60 y 70 mls , mas que cambiar líneas de la clase, se procedió, con ayuda de la ia, a colocarlas todas en un solo archivo y correr las necesarias por consola. Estas mismas pruebas en el bloque 1 serian imposibles de realizar pues se tendría que haber cambiado el código fuente mas de 1 vez, a diferencia de este en el que ya tenemos todo segmentado.  
 
 ---
 
